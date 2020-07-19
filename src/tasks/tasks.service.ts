@@ -36,10 +36,10 @@ export class TasksService {
         return taskToBeRemoved;
     }
 
-    patchTaskStatus(id: string, patchTaskStatusDto: PatchTaskStatusDto): Task {
+    updateTaskStatus(id: string, patchTaskStatusDto: PatchTaskStatusDto): Task {
         const { status } = patchTaskStatusDto;
-        const taskToBePatched = this.tasks.find(task => task.id === id);
-        taskToBePatched.status = TaskStatus[status];
-        return taskToBePatched;
+        const task = this.getTaskById(id);
+        task.status = status;
+        return task;
     }
 }

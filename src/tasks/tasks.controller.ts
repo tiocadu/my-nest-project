@@ -29,10 +29,10 @@ export class TasksController {
     }
 
     @Patch(':id/status')
-    patchTaskStatus(
+    updateTaskStatus(
         @Param('id') id: string,
         @Body() patchTaskStatusDto: PatchTaskStatusDto
     ): Task {
-        return this.tasksService.patchTaskStatus(id, patchTaskStatusDto);
+        return this.tasksService.updateTaskStatus(id, patchTaskStatusDto);
     }
 }
