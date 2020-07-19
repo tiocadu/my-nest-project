@@ -45,6 +45,7 @@ export class TasksController {
   }
 
   @Patch(':id/status')
+  @UsePipes(ValidationPipe)
   updateTaskStatus(
     @Param('id') id: string,
     @Body() patchTaskStatusDto: PatchTaskStatusDto,
