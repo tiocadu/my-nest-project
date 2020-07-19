@@ -7,6 +7,7 @@ API endpoints to implement - Tasks
 [X] /tasks                  POST    Create a task
 [X] /tasks/:id              DELETE  Delete a task
 [X] /tasks/:id/status       PATCH   Update task status
+[X] /tasks?status&search    GET     Get tasks with filter
 
 API endpoints to implement - Auth
 
