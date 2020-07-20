@@ -39,7 +39,10 @@ export class TasksService {
     }
   }
 
-  async updateTaskStatus(id: number, patchTaskStatusDto: PatchTaskStatusDto): Promise<Task> {
+  async updateTaskStatus(
+    id: number,
+    patchTaskStatusDto: PatchTaskStatusDto,
+  ): Promise<Task> {
     const { status } = patchTaskStatusDto;
     const task = await this.getTaskById(id);
     task.status = status;
