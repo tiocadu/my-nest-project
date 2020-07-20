@@ -11,7 +11,11 @@ describe('Tasks Controller', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [TypeOrmModule.forRoot(typeOrmConfig), TasksModule, TypeOrmModule.forFeature([TaskRepository])],
+      imports: [
+        TypeOrmModule.forRoot(typeOrmConfig),
+        TasksModule,
+        TypeOrmModule.forFeature([TaskRepository]),
+      ],
       controllers: [TasksController],
       providers: [TasksService],
     }).compile();

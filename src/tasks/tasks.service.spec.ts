@@ -10,7 +10,11 @@ describe('TasksService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [TypeOrmModule.forRoot(typeOrmConfig), TasksModule, TypeOrmModule.forFeature([TaskRepository])],
+      imports: [
+        TypeOrmModule.forRoot(typeOrmConfig),
+        TasksModule,
+        TypeOrmModule.forFeature([TaskRepository]),
+      ],
       providers: [TasksService],
     }).compile();
 
