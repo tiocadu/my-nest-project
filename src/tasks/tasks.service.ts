@@ -13,26 +13,8 @@ export class TasksService {
     private taskRepository: TaskRepository,
   ) {}
 
-  getAllTasks(): Task[] {
-    return this.tasks;
-  }
-
-  getTasksWithFilter(taskFilters: TaskSearchDto): Task[] {
-    const { status, search } = taskFilters;
-    let tasksFiltered = this.getAllTasks();
-
-    if (status) {
-      tasksFiltered = tasksFiltered.filter(task => task.status === status);
-    }
-
-    if (search) {
-      tasksFiltered = tasksFiltered.filter(
-        task =>
-          task.title.includes(search) || task.description.includes(search),
-      );
-    }
-
-    return tasksFiltered;
+  async getTasks(filterDto: TaskSearchDto): Promise<Task[]> {
+    return await this.taskRepository.getTasks(filterDto);
   }
 
   async getTaskById(id: number): Promise<Task> {
