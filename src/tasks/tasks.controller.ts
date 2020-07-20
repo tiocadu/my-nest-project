@@ -47,9 +47,9 @@ export class TasksController {
 
   @Patch(':id/status')
   updateTaskStatus(
-    @Param('id') id: string,
+    @Param('id', ParseIntPipe) id: number,
     @Body(ValidationPipe) patchTaskStatusDto: PatchTaskStatusDto,
-  ): Task {
+  ): Promise<Task> {
     return this.tasksService.updateTaskStatus(id, patchTaskStatusDto);
   }
 }
