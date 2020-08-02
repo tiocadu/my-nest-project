@@ -11,5 +11,9 @@ API endpoints to implement - Tasks
 
 API endpoints to implement - Auth
 
-[ ] /auth/signup            POST    Sign up
+[X] /auth/signup            POST    Sign up
 [ ] /auth/signin            POST    Sign in
+
+Debt
+
+[ ] unit tests
